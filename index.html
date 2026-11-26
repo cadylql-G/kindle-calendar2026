@@ -1,69 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="900">
-<title>今日日程</title>
-<style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    padding: 36px 40px;
-    background: #FFFFFF;
-    color: #000000;
-    font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
-  }
-  .header {
-    border-bottom: 4px solid #000000;
-    padding-bottom: 22px;
-    margin-bottom: 28px;
-  }
-  .date {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.2;
-  }
-  .weekday {
-    font-size: 38px;
-    font-weight: 600;
-    margin-top: 8px;
-  }
-  .item {
-    border-bottom: 2px solid #CCCCCC;
-    padding: 22px 0;
-    font-size: 34px;
-    line-height: 1.4;
-  }
-  .time {
-    display: inline-block;
-    min-width: 140px;
-    font-weight: 700;
-  }
-  .title {
-    font-weight: 500;
-  }
-  .empty {
-    margin-top: 80px;
-    text-align: center;
-    font-size: 38px;
-    color: #444444;
-  }
-  .footer {
-    margin-top: 36px;
-    font-size: 24px;
-    color: #555555;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="900">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindle Calendar</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 26px 34px;
+      background: #ffffff;
+      color: #000000;
+      width: 100vh;
+      height: 100vw;
+      transform: rotate(90deg);
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      border-bottom: 4px solid #000000;
+      padding-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .date-box .date {
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+    .date-box .weekday {
+      font-size: 32px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+    .weather {
+      font-size: 28px;
+      font-weight: 700;
+      text-align: right;
+      line-height: 1.3;
+    }
+    .events {
+      flex: 1;
+      padding: 18px 0;
+      overflow: hidden;
+    }
+    .event {
+      display: flex;
+      align-items: baseline;
+      padding: 10px 0;
+      border-bottom: 1px dashed #666666;
+      font-size: 34px;
+      line-height: 1.25;
+    }
+    .event:last-child {
+      border-bottom: none;
+    }
+    .event .time {
+      font-weight: 800;
+      min-width: 120px;
+      display: inline-block;
+    }
+    .event .title {
+      font-weight: 600;
+    }
+    .empty {
+      font-size: 34px;
+      color: #333333;
+      margin-top: 36px;
+      text-align: center;
+    }
+    .footer {
+      font-size: 20px;
+      color: #333333;
+      border-top: 2px solid #000000;
+      padding-top: 8px;
+    }
+  </style>
 </head>
 <body>
   <div class="header">
-    <div class="date">2026年11月26日</div>
-    <div class="weekday">周四</div>
+    <div class="date-box">
+      <div class="date">2026年11月26日</div>
+      <div class="weekday">周四</div>
+    </div>
+    <div class="weather">多伦多 阴天 5°C（-1~5°C）</div>
   </div>
-  <div class="list">
-    <div class="item"><span class="time">17:00</span> <span class="title">trial 课 francos</span></div>
-<div class="item"><span class="time">18:30</span> <span class="title">Volleyball13-17</span></div>
+  <div class="events">
+    <div class="event"><span class="time">15:35</span><span class="title">Wash hair</span></div>
+<div class="event"><span class="time">17:00</span><span class="title">trial 课 francos</span></div>
+<div class="event"><span class="time">18:00</span><span class="title">ballet</span></div>
+<div class="event"><span class="time">18:30</span><span class="title">Volleyball13-17</span></div>
   </div>
-  <div class="footer">更新于 13:44 · 每15分钟自动刷新</div>
+  <div class="footer">
+    更新于 14:50 · 每15分钟自动刷新
+  </div>
 </body>
 </html>
