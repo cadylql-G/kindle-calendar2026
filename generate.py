@@ -18,7 +18,7 @@ updated_display = now.strftime("%H:%M")
 
 req = urllib.request.Request(ics_url, headers={"User-Agent": "Mozilla/5.0"})
 with urllib.request.urlopen(req, timeout=20) as resp:
-    cal = Calendar.from_bytes(resp.read())
+    cal = Calendar.from_ical(resp.read())
 
 events = []
 for component in cal.walk():
