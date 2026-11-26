@@ -21,7 +21,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install icalendar pytz
+        run: pip install icalendar recurring-ical-events pytz
 
       - name: Generate index.html
         env:
